@@ -57,10 +57,10 @@ namespace pingpong
             // 
             // gameOver
             // 
-            this.gameOver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.gameOver.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.gameOver.Location = new System.Drawing.Point(432, 109);
             this.gameOver.Name = "gameOver";
-            this.gameOver.Size = new System.Drawing.Size(137, 136);
+            this.gameOver.Size = new System.Drawing.Size(201, 206);
             this.gameOver.TabIndex = 2;
             this.gameOver.Text = "Game Over\r\n\r\nRestart-F1\r\n\r\nExit-ESC";
             this.gameOver.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -68,20 +68,20 @@ namespace pingpong
             // count_Lbl
             // 
             this.count_Lbl.AutoSize = true;
-            this.count_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.count_Lbl.Location = new System.Drawing.Point(95, 22);
+            this.count_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.count_Lbl.Location = new System.Drawing.Point(123, 22);
             this.count_Lbl.Name = "count_Lbl";
-            this.count_Lbl.Size = new System.Drawing.Size(19, 20);
+            this.count_Lbl.Size = new System.Drawing.Size(28, 29);
             this.count_Lbl.TabIndex = 2;
             this.count_Lbl.Text = "0";
             // 
             // scr_Lbl
             // 
             this.scr_Lbl.AutoSize = true;
-            this.scr_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.scr_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.scr_Lbl.Location = new System.Drawing.Point(25, 22);
             this.scr_Lbl.Name = "scr_Lbl";
-            this.scr_Lbl.Size = new System.Drawing.Size(64, 20);
+            this.scr_Lbl.Size = new System.Drawing.Size(92, 29);
             this.scr_Lbl.TabIndex = 2;
             this.scr_Lbl.Text = "Score:";
             // 
@@ -90,18 +90,23 @@ namespace pingpong
             this.ball.BackColor = System.Drawing.Color.DarkRed;
             this.ball.Location = new System.Drawing.Point(336, 285);
             this.ball.Name = "ball";
-            this.ball.Size = new System.Drawing.Size(20, 20);
+            this.ball.Size = new System.Drawing.Size(30, 30);
             this.ball.TabIndex = 1;
             this.ball.TabStop = false;
             // 
             // racket
             // 
             this.racket.BackColor = System.Drawing.Color.Black;
-            this.racket.Location = new System.Drawing.Point(391, 382);
+            this.racket.Location = new System.Drawing.Point(381, 382);
             this.racket.Name = "racket";
-            this.racket.Size = new System.Drawing.Size(210, 20);
+            this.racket.Size = new System.Drawing.Size(220, 23);
             this.racket.TabIndex = 0;
             this.racket.TabStop = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // gameForm
             // 
@@ -112,6 +117,7 @@ namespace pingpong
             this.Name = "gameForm";
             this.Text = "Ping Pong Game";
             this.Load += new System.EventHandler(this.gameForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gameForm_KeyDown);
             this.playGround.ResumeLayout(false);
             this.playGround.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
